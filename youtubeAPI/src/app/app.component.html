@@ -1,0 +1,38 @@
+<!-- Page Content -->
+<div class="container">
+
+  <header class="bg-danger text-center p-2  py-3 mb-4">
+    <div class="container">
+      <h1 class="font-weight-light text-white">
+        <a class="text-white" href="https://www.youtube.com/">YOUTUBE</a></h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <form>
+        <mat-form-field class="example-container col-12">
+          <input matInput placeholder="Search">
+        </mat-form-field><button (changeItem)="changeItem('jordan')">vai</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container-fluid ">
+    <div class="row">
+      <div *ngFor="let video of videos">
+        <div class="col-9">
+          <a href="http://www.youtube.com"><img class="card-img-top" width="100%" [src]="video.snippet.thumbnails.high.url"
+              ></a>
+          <!--<iframe class="youtube-player card-top" type="text/html" height="500" width="100%"
+          [src]="http://www.youtube.com/embed/{{videoId}}" frameborder="0">
+          </iframe>-->
+        </div>
+        <div class="col-9">
+          <h5 class="card-title">{{video.snippet.title}}</h5>
+          <p class="card-text">{{video.snippet.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
